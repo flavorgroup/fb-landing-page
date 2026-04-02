@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Influencer Marketing for Food & Beverage Brands | Flavor Group</title>
+<meta name="description" content="We help food & beverage brands drive real revenue through influencer marketing. Specialized campaigns, curated creator network, and measurable ROI. Get a free audit.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:       #100d18;
+    --dark:        #181320;
+    --dark-card:   #201829;
+    --dark-border: #2e2540;
+    --white:       #ffffff;
+    --off-white:   #f0e8e2;
+    --gray:        #9e8fa0;
+    --gray-dim:    #5e5065;
+    --accent:      #CC2277;
+    --accent-dim:  rgba(204,34,119,0.12);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body:    'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--black);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(16,13,24,0.88);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s;
+  }
+  nav .logo { height: 28px; filter: brightness(0) invert(1); }
+  nav .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  nav .nav-links a {
+    color: var(--off-white); text-decoration: none; font-size: 0.85rem;
+    letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+    transition: color 0.25s;
+  }
+  nav .nav-links a:hover { color: var(--accent); }
+  nav .nav-cta {
+    background: var(--accent); color: var(--white); padding: 0.55rem 1.4rem;
+    font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    border: none; cursor: pointer; text-decoration: none; transition: all 0.25s;
+  }
+  nav .nav-cta:hover { background: var(--white); color: var(--black); }
+
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 3rem 4rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 75% 25%, rgba(204,34,119,0.13) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(159,197,194,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 60%, rgba(91,74,158,0.07) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.6s ease forwards 0.2s;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em;
+    color: var(--white); max-width: 1000px;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.3s;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub {
+    font-size: 1.15rem; color: var(--gray); max-width: 560px;
+    margin-top: 2rem; line-height: 1.7;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.65s;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--white); padding: 1rem 2.2rem;
+    font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    border: none; cursor: pointer; text-decoration: none; transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+  }
+  .btn-primary:hover { background: var(--white); color: var(--black); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: var(--off-white); padding: 1rem 2.2rem;
+    font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    border: 1px solid var(--dark-border); cursor: pointer; text-decoration: none; transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-logos {
+    display: flex; align-items: center; gap: 2.5rem; margin-top: 4rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+  .hero-logos span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray-dim); }
+  .hero-logos .logo-item {
+    font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.05em;
+    color: var(--gray-dim); text-transform: uppercase; opacity: 0.5; transition: opacity 0.3s;
+  }
+  .hero-logos .logo-item:hover { opacity: 1; }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border);
+  }
+  .stat-item {
+    padding: 3rem; text-align: center;
+    border-right: 1px solid var(--dark-border); transition: background 0.3s;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-item:hover { background: var(--accent-dim); }
+  .stat-number {
+    font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 4rem);
+    color: var(--accent); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--gray); margin-top: 0.5rem;
+  }
+
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.5rem);
+    text-transform: uppercase; color: var(--white); line-height: 1; max-width: 800px;
+  }
+  .section-subtitle {
+    font-size: 1.1rem; color: var(--gray); max-width: 600px;
+    margin-top: 1.25rem; line-height: 1.7;
+  }
+
+  /* PHONES */
+  .phones-section {
+    background: var(--black);
+    padding: 5rem 3rem 6rem;
+    border-bottom: 1px solid var(--dark-border);
+  }
+  .phones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .phone-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+  }
+  /* iPhone 14 mockup — inline SVG shell on top, video behind */
+  .phone-mockup {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 30px 60px rgba(204,34,119,0.2));
+  }
+  .phone-mockup:hover { transform: translateY(-10px); }
+  /* SVG sets the height of the mockup via normal flow */
+  .phone-mockup > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+  /* Video screen: absolutely positioned behind the SVG */
+  .phone-screen {
+    position: absolute;
+    top: 1.6%;
+    left: 4.1%;
+    width: 92.2%;
+    height: 96.8%;
+    z-index: 1;
+    border-radius: 40px;
+    overflow: hidden;
+    background: #000;
+  }
+  .phone-screen iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78%; /* 16:9 → 9:16 overscan */
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    display: block;
+  }
+  .phone-label { text-align: center; }
+  .phone-views {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+  .phone-handle {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 1024px) {
+    .phones-grid { gap: 1.5rem; }
+    .phone-mockup { max-width: 220px; }
+    .phone-screen { border-radius: 28px; }
+  }
+  @media (max-width: 640px) {
+    .phones-grid { grid-template-columns: 1fr; }
+    .phone-mockup { max-width: 280px; }
+    .phone-screen { border-radius: 36px; }
+  }
+
+  .problems { background: var(--dark); }
+  .problems-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    margin-top: 4rem; background: var(--dark-border);
+  }
+  .problem-card {
+    background: var(--dark); padding: 2.5rem; transition: all 0.35s; position: relative;
+  }
+  .problem-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 0; height: 2px; background: var(--accent); transition: width 0.4s;
+  }
+  .problem-card:hover::before { width: 100%; }
+  .problem-card:hover { background: var(--dark-card); }
+  .problem-num {
+    font-family: var(--font-display); font-size: 2.5rem;
+    color: rgba(204,34,119,0.18); line-height: 1; margin-bottom: 1rem;
+  }
+  .problem-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+  .problem-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
+
+  .approach-steps { margin-top: 4rem; }
+  .step {
+    display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 3rem 0;
+    border-bottom: 1px solid var(--dark-border); transition: all 0.3s; position: relative;
+  }
+  .step:first-child { border-top: 1px solid var(--dark-border); }
+  .step:hover { padding-left: 1rem; }
+  .step:hover .step-num { color: var(--accent); }
+  .step-num {
+    font-family: var(--font-display); font-size: 3rem;
+    color: var(--gray-dim); line-height: 1; transition: color 0.3s;
+  }
+  .step-content h3 {
+    font-family: var(--font-display); font-size: 1.8rem;
+    text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem;
+  }
+  .step-content p { font-size: 0.95rem; color: var(--gray); max-width: 600px; line-height: 1.7; }
+  .step-tag {
+    display: inline-block; margin-top: 0.75rem;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(204,34,119,0.25); background: var(--accent-dim);
+  }
+
+  .cases { background: var(--dark); }
+  .cases-grid { margin-top: 4rem; display: flex; flex-direction: column; gap: 1px; background: var(--dark-border); }
+  .case-card {
+    display: grid; grid-template-columns: 1fr 1fr; background: var(--dark); transition: background 0.3s;
+  }
+  .case-card:hover { background: var(--dark-card); }
+  .case-visual {
+    aspect-ratio: 16/10; overflow: hidden;
+    background: var(--dark-card); display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .case-visual-inner {
+    width: 100%; height: 100%; background-size: cover; background-position: center;
+    transition: transform 0.5s;
+  }
+  .case-card:hover .case-visual-inner { transform: scale(1.05); }
+  .case-gradient-2 {
+    background: linear-gradient(135deg, #0d1a28 0%, #3b4a9e 40%, #6ab8b5 70%, #100d18 100%);
+  }
+  .case-brand {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: var(--font-display); font-size: 3rem; color: rgba(255,255,255,0.15);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .case-info { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+  .case-info .case-tag {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .case-info h3 {
+    font-family: var(--font-display); font-size: 2rem; text-transform: uppercase;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+  .case-info .case-desc { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.65; }
+  .case-stats { display: flex; gap: 2rem; margin-bottom: 1.5rem; }
+  .case-stat .val { font-family: var(--font-display); font-size: 1.8rem; color: var(--accent); line-height: 1; }
+  .case-stat .lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-dim); margin-top: 0.2rem; }
+  .case-quote {
+    font-style: italic; font-size: 0.9rem; color: var(--off-white);
+    border-left: 2px solid var(--accent); padding-left: 1rem; margin-top: 0.5rem;
+  }
+  .case-quote-attr { font-size: 0.75rem; color: var(--gray-dim); margin-top: 0.4rem; font-style: normal; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .why-card {
+    border: 1px solid var(--dark-border); padding: 2.5rem;
+    transition: all 0.35s; position: relative; overflow: hidden;
+  }
+  .why-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 0; background: var(--accent-dim); transition: height 0.4s;
+  }
+  .why-card:hover::after { height: 100%; }
+  .why-card > * { position: relative; z-index: 1; }
+  .why-icon {
+    font-size: 1.6rem; margin-bottom: 1.25rem;
+    width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--dark-border); color: var(--accent);
+  }
+  .why-card h3 {
+    font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .why-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; }
+
+  .testimonials { background: var(--dark); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .testimonial-card { border: 1px solid var(--dark-border); padding: 2.5rem; position: relative; }
+  .testimonial-card::before {
+    content: '\201C'; font-family: Georgia, serif; font-size: 5rem;
+    color: rgba(204,34,119,0.12); position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1;
+  }
+  .testimonial-card p {
+    font-size: 0.95rem; color: var(--off-white); line-height: 1.7;
+    font-style: italic; margin-bottom: 1.5rem; position: relative; z-index: 1;
+  }
+  .testimonial-attr { font-size: 0.8rem; color: var(--gray-dim); }
+  .testimonial-attr strong { color: var(--white); font-weight: 600; }
+
+  .logos-section {
+    border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border);
+    padding: 3rem; overflow: hidden;
+  }
+  .logos-track { display: flex; gap: 4rem; align-items: center; animation: scroll-logos 25s linear infinite; }
+  .logos-track .logo-text {
+    font-family: var(--font-display); font-size: 1.5rem; color: var(--gray-dim);
+    text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+    opacity: 0.4; transition: opacity 0.3s;
+  }
+  .logos-track .logo-text:hover { opacity: 1; color: var(--accent); }
+  @keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .cta-section { background: var(--dark); position: relative; overflow: hidden; }
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(204,34,119,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; position: relative; z-index: 1; }
+  .cta-content { display: flex; flex-direction: column; justify-content: center; }
+  .cta-content h2 {
+    font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 4rem);
+    text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 1.25rem;
+  }
+  .cta-content p { font-size: 1.05rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; }
+  .cta-trust { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--gray-dim); }
+  .cta-trust .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+  .cta-form { background: rgba(255,255,255,0.03); border: 1px solid var(--dark-border); padding: 2.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block; font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gray); margin-bottom: 0.4rem;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 0.85rem 1rem;
+    background: var(--black); border: 1px solid var(--dark-border);
+    color: var(--white); font-family: var(--font-body); font-size: 0.9rem;
+    transition: border-color 0.3s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-group select {
+    cursor: pointer; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%239e8fa0'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 1rem center;
+  }
+  .form-submit {
+    width: 100%; padding: 1rem; margin-top: 0.5rem;
+    background: var(--accent); color: var(--white);
+    font-family: var(--font-body); font-size: 0.85rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    border: none; cursor: pointer; transition: all 0.3s;
+  }
+  .form-submit:hover { background: var(--white); color: var(--black); }
+  .form-note { text-align: center; font-size: 0.75rem; color: var(--gray-dim); margin-top: 0.75rem; }
+
+  .faq-list { max-width: 800px; margin-top: 4rem; }
+  .faq-item { border-bottom: 1px solid var(--dark-border); }
+  .faq-item:first-child { border-top: 1px solid var(--dark-border); }
+  .faq-question {
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 0; background: none; border: none; cursor: pointer;
+    font-family: var(--font-body); font-size: 1rem; font-weight: 600;
+    color: var(--white); text-align: left; transition: color 0.3s;
+  }
+  .faq-question:hover { color: var(--accent); }
+  .faq-icon { font-size: 1.5rem; color: var(--gray-dim); transition: transform 0.3s, color 0.3s; flex-shrink: 0; margin-left: 1rem; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s; }
+  .faq-item.open .faq-answer { max-height: 300px; }
+  .faq-answer p { padding-bottom: 1.5rem; font-size: 0.92rem; color: var(--gray); line-height: 1.7; max-width: 680px; }
+
+  footer {
+    padding: 3rem; border-top: 1px solid var(--dark-border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer .footer-logo { height: 24px; filter: brightness(0) invert(1); opacity: 0.6; }
+  footer .footer-links { display: flex; gap: 2rem; }
+  footer .footer-links a {
+    color: var(--gray); text-decoration: none; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.08em; transition: color 0.25s;
+  }
+  footer .footer-links a:hover { color: var(--accent); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 1024px) {
+    nav { padding: 1rem 1.5rem; }
+    nav .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .problems-grid { grid-template-columns: 1fr 1fr; }
+    .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .cases .case-card { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .problems-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    .step { grid-template-columns: 50px 1fr; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">
+    <img src="https://cdn.prod.website-files.com/65ea3d8b80d297ef395b06d8/65ea3d8b80d297ef395b0794_62576d97342cae64c0cbc0f7_Flavor%20Group%20White%20New-p-500.png" alt="Flavor Group" class="logo">
+  </a>
+  <div class="nav-links">
+    <a href="/services">Services</a>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="#contact" class="nav-cta">Get Free Audit</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Influencer Marketing for Food &amp; Beverage</div>
+  <h1>Your Customers Are Watching Creators Eat.<br><span>Make Sure They're Eating Yours.</span></h1>
+  <p class="hero-sub">We design and execute influencer campaigns that drive measurable sales for food, beverage, and CPG brands. From nano-creators to celebrity partnerships &mdash; strategy, content, amplification, and results under one roof.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">Get a Free Influencer Audit &rarr;</a>
+    <a href="#results" class="btn-secondary">See Our Results &darr;</a>
+  </div>
+  <div class="hero-logos">
+    <span>Trusted By</span>
+    <div class="logo-item">Stella Rosa</div>
+    <div class="logo-item">Canteen</div>
+    <div class="logo-item">Trumer</div>
+    <div class="logo-item">Deep Eddy</div>
+    <div class="logo-item">Slow &amp; Low</div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat-item reveal">
+    <div class="stat-number">500M+</div>
+    <div class="stat-label">Impressions Generated</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-number">6.2x</div>
+    <div class="stat-label">Average Campaign ROI</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-number">150+</div>
+    <div class="stat-label">F&amp;B Campaigns Delivered</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-number">10K+</div>
+    <div class="stat-label">Creator Network</div>
+  </div>
+</div>
+
+<section class="phones-section">
+  <div class="phones-grid">
+    <div class="phone-item">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <iframe src="https://player.vimeo.com/video/1172990425?autoplay=1&loop=1&muted=1&background=1&autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 892" >
+  <rect x="-.5" y=".5" width="15" height="35" rx="1.5" transform="matrix(-1 0 0 1 15 172)" fill="url(#a)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 320)" fill="url(#b)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 236)" fill="url(#c)" stroke="#A6A6AB"/>
+  <rect x=".5" y="-.5" width="15" height="107" rx="1.5" transform="matrix(1 0 0 -1 423 389)" fill="url(#d)" stroke="#A6A6AB"/>
+  <rect x="10.5" y="7.5" width="418" height="877" rx="68.5" stroke="#323039" stroke-width="15"/>
+  <rect x="6" y="3" width="427" height="886" rx="73" stroke="#5D5B66" stroke-width="6"/>
+  <rect x="5" y="2" width="429" height="888" rx="74" stroke="#CCBCC2" stroke-width="4"/>
+  <rect x="3.5" y=".5" width="432" height="891" rx="75.5" stroke="#ADABAC"/>
+  <rect x="16.5" y="13.5" width="406" height="865" rx="64.5" stroke="#0D0D0E" stroke-width="3"/>
+  <rect x="17" y="14" width="405" height="864" rx="64" fill="url(#e)"/>
+  <rect x="157" y="32" width="125" height="36" rx="18" fill="#000"/>
+  <g opacity=".5" transform="rotate(90 264 50)">
+    <circle cx="264" cy="50" r="6" stroke="#A0A9BB" stroke-opacity=".25"/>
+    <circle cx="264" cy="50" r="6" stroke="url(#f)"/>
+  </g>
+  <g filter="url(#g)">
+    <ellipse cx="264" cy="52.56" rx="1.56" ry="3" transform="rotate(90 264 52.56)" fill="url(#h)"/>
+  </g>
+  <g filter="url(#i)">
+    <ellipse rx="1.56" ry="3" transform="matrix(0 -1 -1 0 264 47.56)" fill="url(#j)"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="e" x1="219.5" y1="14" x2="219.5" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B2535"/><stop offset="1" stop-color="#1A1523"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 263.21 52.56)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 .77 3)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <filter id="g" x="261" y="51" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+    <filter id="i" x="261" y="44.44" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+  </defs>
+      </div>
+      <div class="phone-label">
+        <div class="phone-views">2M VIEWS</div>
+        <div class="phone-handle"><a target="_blank" href="https://www.dropbox.com/scl/fi/ef5ede0tf28402bsi55e2/malinda.rocha-holiday-draft-1.mov?rlkey=wlcv119fsufq4z0p8w6770r41&st=jw6docrg&dl=0">@malinda.rocha</a></div>
+      </div>
+    </div>
+    <div class="phone-item">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <iframe src="https://player.vimeo.com/video/1172990442?autoplay=1&loop=1&muted=1&background=1&autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 892" >
+  <rect x="-.5" y=".5" width="15" height="35" rx="1.5" transform="matrix(-1 0 0 1 15 172)" fill="url(#a)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 320)" fill="url(#b)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 236)" fill="url(#c)" stroke="#A6A6AB"/>
+  <rect x=".5" y="-.5" width="15" height="107" rx="1.5" transform="matrix(1 0 0 -1 423 389)" fill="url(#d)" stroke="#A6A6AB"/>
+  <rect x="10.5" y="7.5" width="418" height="877" rx="68.5" stroke="#323039" stroke-width="15"/>
+  <rect x="6" y="3" width="427" height="886" rx="73" stroke="#5D5B66" stroke-width="6"/>
+  <rect x="5" y="2" width="429" height="888" rx="74" stroke="#CCBCC2" stroke-width="4"/>
+  <rect x="3.5" y=".5" width="432" height="891" rx="75.5" stroke="#ADABAC"/>
+  <rect x="16.5" y="13.5" width="406" height="865" rx="64.5" stroke="#0D0D0E" stroke-width="3"/>
+  <rect x="17" y="14" width="405" height="864" rx="64" fill="url(#e)"/>
+  <rect x="157" y="32" width="125" height="36" rx="18" fill="#000"/>
+  <g opacity=".5" transform="rotate(90 264 50)">
+    <circle cx="264" cy="50" r="6" stroke="#A0A9BB" stroke-opacity=".25"/>
+    <circle cx="264" cy="50" r="6" stroke="url(#f)"/>
+  </g>
+  <g filter="url(#g)">
+    <ellipse cx="264" cy="52.56" rx="1.56" ry="3" transform="rotate(90 264 52.56)" fill="url(#h)"/>
+  </g>
+  <g filter="url(#i)">
+    <ellipse rx="1.56" ry="3" transform="matrix(0 -1 -1 0 264 47.56)" fill="url(#j)"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="e" x1="219.5" y1="14" x2="219.5" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B2535"/><stop offset="1" stop-color="#1A1523"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 263.21 52.56)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 .77 3)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <filter id="g" x="261" y="51" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+    <filter id="i" x="261" y="44.44" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+  </defs>
+      </div>
+      <div class="phone-label">
+        <div class="phone-views">1.3M VIEWS</div>
+        <div class="phone-handle"><a target="_blank" href="https://www.dropbox.com/scl/fi/iogy15crpvj778ryiw059/Lexi-Johnson-Stella-Rosa-Sept-V2-final-approved.MOV?rlkey=pubhpi7fy4ka9oqeaa35q6spy&st=27qjyw09&dl=0">@lexiijohnson</a></div>
+      </div>
+    </div>
+    <div class="phone-item">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <iframe src="https://player.vimeo.com/video/1172990471?autoplay=1&loop=1&muted=1&background=1&autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 892" >
+  <rect x="-.5" y=".5" width="15" height="35" rx="1.5" transform="matrix(-1 0 0 1 15 172)" fill="url(#a)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 320)" fill="url(#b)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 236)" fill="url(#c)" stroke="#A6A6AB"/>
+  <rect x=".5" y="-.5" width="15" height="107" rx="1.5" transform="matrix(1 0 0 -1 423 389)" fill="url(#d)" stroke="#A6A6AB"/>
+  <rect x="10.5" y="7.5" width="418" height="877" rx="68.5" stroke="#323039" stroke-width="15"/>
+  <rect x="6" y="3" width="427" height="886" rx="73" stroke="#5D5B66" stroke-width="6"/>
+  <rect x="5" y="2" width="429" height="888" rx="74" stroke="#CCBCC2" stroke-width="4"/>
+  <rect x="3.5" y=".5" width="432" height="891" rx="75.5" stroke="#ADABAC"/>
+  <rect x="16.5" y="13.5" width="406" height="865" rx="64.5" stroke="#0D0D0E" stroke-width="3"/>
+  <rect x="17" y="14" width="405" height="864" rx="64" fill="url(#e)"/>
+  <rect x="157" y="32" width="125" height="36" rx="18" fill="#000"/>
+  <g opacity=".5" transform="rotate(90 264 50)">
+    <circle cx="264" cy="50" r="6" stroke="#A0A9BB" stroke-opacity=".25"/>
+    <circle cx="264" cy="50" r="6" stroke="url(#f)"/>
+  </g>
+  <g filter="url(#g)">
+    <ellipse cx="264" cy="52.56" rx="1.56" ry="3" transform="rotate(90 264 52.56)" fill="url(#h)"/>
+  </g>
+  <g filter="url(#i)">
+    <ellipse rx="1.56" ry="3" transform="matrix(0 -1 -1 0 264 47.56)" fill="url(#j)"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="e" x1="219.5" y1="14" x2="219.5" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B2535"/><stop offset="1" stop-color="#1A1523"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 263.21 52.56)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 .77 3)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <filter id="g" x="261" y="51" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+    <filter id="i" x="261" y="44.44" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+  </defs>
+      </div>
+      <div class="phone-label">
+        <div class="phone-views">3M VIEWS</div>
+        <div class="phone-handle"><a target="_blank" href="https://www.dropbox.com/scl/fi/u6g5ne6889bd1g3t5z88z/ParksPartyPlanning-FINAL-APPROVED.mp4?rlkey=vezaifa12bx1xuel7su3wswpv&st=rsf4vcex&dl=0">@parkspartyplanning</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problems">
+  <div class="section-label reveal">The Challenge</div>
+  <h2 class="section-title reveal">F&amp;B Brands Face Unique Influencer Challenges</h2>
+  <div class="problems-grid reveal">
+    <div class="problem-card">
+      <div class="problem-num">01</div>
+      <h3>Finding Creators Who Actually Convert</h3>
+      <p>Most food influencers have inflated followings with low engagement. You need creators whose audiences actually buy &mdash; not just double-tap.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">02</div>
+      <h3>Content That Feels Authentic</h3>
+      <p>Overly produced sponsored posts kill trust instantly. F&amp;B audiences can smell an ad from a mile away, and it backfires.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">03</div>
+      <h3>Measuring Real ROI</h3>
+      <p>Impressions don't pay the bills. You need to tie influencer spend directly to store traffic, online orders, and revenue.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">04</div>
+      <h3>Navigating Food Regulations</h3>
+      <p>FDA guidelines, FTC disclosures, health claims &mdash; one misstep in food marketing creates a compliance nightmare.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">05</div>
+      <h3>Scaling Beyond One-Off Campaigns</h3>
+      <p>You've tried influencer marketing and it worked once. But you don't have a repeatable system to scale it across seasons and SKUs.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">06</div>
+      <h3>Standing Out in a Crowded Feed</h3>
+      <p>Every food brand is doing influencer marketing now. The question is whether yours rises above the noise or gets lost in it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="approach">
+  <div class="section-label reveal">Our Process</div>
+  <h2 class="section-title reveal">A Proven System That Drives Revenue</h2>
+  <p class="section-subtitle reveal">Not a one-size-fits-all playbook. A methodology built from 150+ F&amp;B campaigns and refined with every one.</p>
+  <div class="approach-steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Audience &amp; Creator Matching</h3>
+        <p>We analyze your target customer's consumption habits and match you with creators whose audiences mirror your ideal buyer. Proprietary vetting covering engagement quality, demographics, brand safety, and past performance.</p>
+        <span class="step-tag">Data-Driven Selection</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Campaign Strategy &amp; Creative Direction</h3>
+        <p>Every campaign is built around a specific business objective &mdash; product launch, seasonal push, retail support, or awareness. We handle briefs, content calendars, and compliance review.</p>
+        <span class="step-tag">Goal-Oriented</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Content Production &amp; Amplification</h3>
+        <p>Creators produce authentic content. We manage the entire process and amplify top-performing pieces through paid social and whitelisting. Briefing, review, posting, and paid &mdash; all under one roof.</p>
+        <span class="step-tag">Full-Service</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>Performance Tracking &amp; Optimization</h3>
+        <p>Real-time dashboards tracking impressions, engagement, clicks, conversions, and attributed revenue. We optimize mid-campaign, not after the budget's spent.</p>
+        <span class="step-tag">Real-Time Analytics</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <h3>Scale &amp; Repeat</h3>
+        <p>We identify what worked, build your creator roster, and create a repeatable playbook for ongoing campaigns. Clients average 40% improvement in ROI from campaign one to campaign three.</p>
+        <span class="step-tag">Compounding Results</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="results">
+  <div class="section-label reveal">Results</div>
+  <h2 class="section-title reveal">Real Results for Real F&amp;B Brands</h2>
+  <div class="cases-grid">
+    <div class="case-card reveal">
+      <div class="case-visual">
+        <div class="case-visual-inner" style="background-image: url('https://cdn.prod.website-files.com/61b3dd3cffc88817f3979755/69cda763c289f7693c18009e_SR.jpg'); background-size: cover; background-position: center;"></div>
+      </div>
+      <div class="case-info">
+        <div class="case-tag">Wine &amp; Spirits &middot; Influencer Campaign</div>
+        <h3>Stella Rosa</h3>
+        <p class="case-desc">Launched a multi-platform influencer campaign targeting millennial wine enthusiasts to drive trial and brand awareness during peak holiday season.</p>
+        <div class="case-stats">
+          <div class="case-stat"><div class="val">12M+</div><div class="lbl">Impressions</div></div>
+          <div class="case-stat"><div class="val">340%</div><div class="lbl">ROI</div></div>
+          <div class="case-stat"><div class="val">45K</div><div class="lbl">Site Visits</div></div>
+        </div>
+        <div class="case-quote">
+          &ldquo;Flavor Group didn't just run a campaign &mdash; they built a system we still use today.&rdquo;
+          <div class="case-quote-attr">&mdash; VP of Marketing, Stella Rosa</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card reveal" style="direction:rtl;">
+      <div class="case-card" style="direction:ltr; display:contents;">
+        <div class="case-info" style="direction:ltr;">
+          <div class="case-tag">Spirits &middot; Social + Influencer</div>
+          <h3>Canteen Spirits</h3>
+          <p class="case-desc">Built a year-round creator program connecting craft cocktail culture with a health-conscious audience, driving both brand awareness and retail velocity.</p>
+          <div class="case-stats">
+            <div class="case-stat"><div class="val">8.5M</div><div class="lbl">Reach</div></div>
+            <div class="case-stat"><div class="val">520%</div><div class="lbl">ROI</div></div>
+            <div class="case-stat"><div class="val">28%</div><div class="lbl">Sales Lift</div></div>
+          </div>
+          <div class="case-quote">
+            &ldquo;They understood our audience better than we did. The creator matches were spot-on.&rdquo;
+            <div class="case-quote-attr">&mdash; Brand Director, Canteen Spirits</div>
+          </div>
+        </div>
+        <div class="case-visual" style="direction:ltr;">
+          <div class="case-visual-inner case-gradient-2"></div>
+          <div class="case-brand">Canteen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="/work" class="btn-secondary">See More Work &rarr;</a>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-label reveal">Why Flavor Group</div>
+  <h2 class="section-title reveal">Why F&amp;B Brands Choose Us Over Generalist Agencies</h2>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">🍽</div>
+      <h3>F&amp;B Specialization</h3>
+      <p>We don't do SaaS. We don't do fashion. We live and breathe food &amp; beverage. Every campaign, creator relationship, and benchmark comes from this world.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">⚡</div>
+      <h3>Curated Creator Network</h3>
+      <p>10,000+ vetted food, recipe, health, and lifestyle creators. Our vetting goes beyond follower counts to audience purchasing behavior and content quality.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">📊</div>
+      <h3>Revenue-First Measurement</h3>
+      <p>We don't report on likes. We report on revenue. Every campaign is structured around measurable business outcomes from day one.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🔄</div>
+      <h3>Full-Service Execution</h3>
+      <p>Strategy, sourcing, content management, paid amplification, and reporting &mdash; all under one roof. No piecemeal vendor management for you.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">✓</div>
+      <h3>Compliance Built In</h3>
+      <p>We understand FDA, FTC, and platform-specific disclosure requirements for food and health claims. Your legal team will thank you.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🚀</div>
+      <h3>Speed to Launch</h3>
+      <p>First content live in 2-4 weeks from kickoff. We move fast because we've built the systems and relationships to execute immediately.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-label reveal">What Clients Say</div>
+  <h2 class="section-title reveal">Trusted by Leading F&amp;B Brands</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <p>&ldquo;They completely transformed our approach to influencer marketing. The ROI speaks for itself &mdash; we've tripled our investment with Flavor Group.&rdquo;</p>
+      <div class="testimonial-attr"><strong>Marketing Director</strong> &middot; Premium Wine Brand</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <p>&ldquo;What sets them apart is the creator relationships. Every match felt intentional, and the content was exactly what our audience wanted to see.&rdquo;</p>
+      <div class="testimonial-attr"><strong>VP of Brand</strong> &middot; Craft Spirits Company</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <p>&ldquo;Finally an agency that understands food marketing. They handled compliance, creative, and measurement seamlessly. A true partner.&rdquo;</p>
+      <div class="testimonial-attr"><strong>CMO</strong> &middot; National Beverage Brand</div>
+    </div>
+  </div>
+</section>
+
+<div class="logos-section">
+  <div class="logos-track">
+    <span class="logo-text">Stella Rosa</span>
+    <span class="logo-text">Canteen</span>
+    <span class="logo-text">Trumer Pils</span>
+    <span class="logo-text">Deep Eddy</span>
+    <span class="logo-text">Slow &amp; Low</span>
+    <span class="logo-text">Red Bull</span>
+    <span class="logo-text">Branca</span>
+    <span class="logo-text">Filthy</span>
+    <span class="logo-text">88 Rising</span>
+    <span class="logo-text">Viceroy</span>
+    <span class="logo-text">Stella Rosa</span>
+    <span class="logo-text">Canteen</span>
+    <span class="logo-text">Trumer Pils</span>
+    <span class="logo-text">Deep Eddy</span>
+    <span class="logo-text">Slow &amp; Low</span>
+    <span class="logo-text">Red Bull</span>
+    <span class="logo-text">Branca</span>
+    <span class="logo-text">Filthy</span>
+    <span class="logo-text">88 Rising</span>
+    <span class="logo-text">Viceroy</span>
+  </div>
+</div>
+
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="cta-content reveal">
+      <div class="section-label">Let's Talk</div>
+      <h2>Ready to See What Influencer Marketing Can Do for Your Brand?</h2>
+      <p>Get a free influencer audit for your F&amp;B brand. We'll analyze your current social presence, identify creator opportunities, and show you what's possible &mdash; no commitment required.</p>
+      <div class="cta-trust">
+        <span class="dot"></span> We'll respond within 24 hours with a personalized analysis
+      </div>
+      <div class="cta-trust" style="margin-top:0.5rem;">
+        <span class="dot"></span> Trusted by 20+ F&amp;B brands. No spam, no pressure.
+      </div>
+    </div>
+    <div class="cta-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Work Email *</label>
+        <input type="email" placeholder="jane@brand.com">
+      </div>
+      <div class="form-group">
+        <label>Company Name *</label>
+        <input type="text" placeholder="Your brand">
+      </div>
+      <div class="form-group">
+        <label>Website</label>
+        <input type="url" placeholder="https://yourbrand.com">
+      </div>
+      <div class="form-group">
+        <label>Monthly Influencer Budget</label>
+        <select>
+          <option value="">Select a range</option>
+          <option>Under $10K</option>
+          <option>$10K &ndash; $50K</option>
+          <option>$50K &ndash; $100K</option>
+          <option>$100K+</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>What's Your Biggest Challenge?</label>
+        <textarea placeholder="Tell us briefly what you're looking to solve..."></textarea>
+      </div>
+      <button class="form-submit">Get My Free Audit &rarr;</button>
+      <div class="form-note">No commitment required. We'll respond within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-label reveal">FAQ</div>
+  <h2 class="section-title reveal">Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <button class="faq-question">How do you select influencers for food brands? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>We use a proprietary vetting process that goes beyond follower counts. We analyze audience demographics, engagement quality, content style, brand safety history, and past campaign performance. For F&amp;B specifically, we look at audience purchasing behavior and affinity for food/beverage content.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question">What size brands do you work with? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Everything from growing DTC brands investing $10K/month to enterprise CPG companies with $100K+ monthly budgets. Our process scales to fit your scope, and many of our longest relationships started small and grew as we proved results.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question">How do you measure ROI on influencer campaigns? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>We implement full attribution tracking including custom links, promo codes, pixel tracking, post-purchase surveys, and brand lift studies. Every campaign includes a real-time dashboard showing impressions, engagement, clicks, conversions, and revenue attribution.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question">How long does it take to launch a campaign? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Typically 2&ndash;4 weeks from kickoff to first content going live, depending on scope and creator availability. We move fast because we've already built the creator relationships and systems to execute efficiently.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question">Do you handle just influencer or full social media? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>We offer full-service capabilities: influencer campaign management, social media management, content creation, and paid media amplification. Many F&amp;B clients start with influencer and expand into additional services as we demonstrate results.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question">Do you handle FTC and FDA compliance? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Yes. All creator content is reviewed for proper FTC disclosure compliance and FDA guidelines around food and health claims before publishing. We stay current on regulations so your brand stays protected.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question">What platforms do you focus on? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Instagram, TikTok, YouTube, and Pinterest are the core platforms for F&amp;B influencer marketing. We recommend the right channel mix based on your target audience, product type, and campaign objectives &mdash; not a one-size-fits-all approach.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://cdn.prod.website-files.com/65ea3d8b80d297ef395b06d8/65ea3d8b80d297ef395b0794_62576d97342cae64c0cbc0f7_Flavor%20Group%20White%20New-p-500.png" alt="Flavor Group" class="footer-logo">
+  <div class="footer-links">
+    <a href="/services">Services</a>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="/cdn-cgi/l/email-protection#4a2925243e2b293e0a2c262b3c25382d38253f3a64292527">Contact</a>
+  </div>
+</footer>
+
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
