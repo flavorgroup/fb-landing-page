@@ -158,7 +158,7 @@
   .phones-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 3rem;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -168,28 +168,32 @@
     align-items: center;
     gap: 1.75rem;
   }
+  /* iPhone 14 mockup — inline SVG shell on top, video behind */
   .phone-mockup {
     position: relative;
     width: 100%;
     max-width: 300px;
     transition: transform 0.4s ease;
-    filter: drop-shadow(0 30px 80px rgba(204,34,119,0.18));
+    filter: drop-shadow(0 30px 60px rgba(204,34,119,0.2));
   }
   .phone-mockup:hover { transform: translateY(-10px); }
-  .phone-shell {
+  /* SVG sets the height of the mockup via normal flow */
+  .phone-mockup > svg {
+    display: block;
+    width: 100%;
+    height: auto;
     position: relative;
     z-index: 2;
-    width: 100%;
     pointer-events: none;
-    display: block;
   }
+  /* Video screen: absolutely positioned behind the SVG */
   .phone-screen {
     position: absolute;
     top: 2.2%;
     left: 5.1%;
     width: 90.2%;
     height: 95.8%;
-    z-index: 0;
+    z-index: 1;
     border-radius: 3%;
     overflow: hidden;
     background: #000;
@@ -523,9 +527,89 @@
     <div class="phone-item">
       <div class="phone-mockup">
         <div class="phone-screen">
-          <iframe src="https://player.vimeo.com/video/1172990425?autoplay=1&loop=1&muted=1&controls=0&background=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;">
+            <source src="https://flavorgroup.github.io/fb-landing-page/@malinda.rocha.mov" type="video/mp4">
+          </video>
         </div>
-        <img src="https://cdn.prod.website-files.com/65ea3d8b80d297ef395b06d8/69b08f4fcca10b5653b82dd7_iPhone14-deep-purple.svg" alt="Phone" class="phone-shell">
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 892" >
+  <rect x="-.5" y=".5" width="15" height="35" rx="1.5" transform="matrix(-1 0 0 1 15 172)" fill="url(#a)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 320)" fill="url(#b)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 236)" fill="url(#c)" stroke="#A6A6AB"/>
+  <rect x=".5" y="-.5" width="15" height="107" rx="1.5" transform="matrix(1 0 0 -1 423 389)" fill="url(#d)" stroke="#A6A6AB"/>
+  <rect x="10.5" y="7.5" width="418" height="877" rx="68.5" stroke="#323039" stroke-width="15"/>
+  <rect x="6" y="3" width="427" height="886" rx="73" stroke="#5D5B66" stroke-width="6"/>
+  <rect x="5" y="2" width="429" height="888" rx="74" stroke="#CCBCC2" stroke-width="4"/>
+  <rect x="3.5" y=".5" width="432" height="891" rx="75.5" stroke="#ADABAC"/>
+  <rect x="16.5" y="13.5" width="406" height="865" rx="64.5" stroke="#0D0D0E" stroke-width="3"/>
+  <rect x="17" y="14" width="405" height="864" rx="64" fill="url(#e)"/>
+  <rect x="157" y="32" width="125" height="36" rx="18" fill="#000"/>
+  <g opacity=".5" transform="rotate(90 264 50)">
+    <circle cx="264" cy="50" r="6" stroke="#A0A9BB" stroke-opacity=".25"/>
+    <circle cx="264" cy="50" r="6" stroke="url(#f)"/>
+  </g>
+  <g filter="url(#g)">
+    <ellipse cx="264" cy="52.56" rx="1.56" ry="3" transform="rotate(90 264 52.56)" fill="url(#h)"/>
+  </g>
+  <g filter="url(#i)">
+    <ellipse rx="1.56" ry="3" transform="matrix(0 -1 -1 0 264 47.56)" fill="url(#j)"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="e" x1="219.5" y1="14" x2="219.5" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B2535"/><stop offset="1" stop-color="#1A1523"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 263.21 52.56)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 .77 3)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <filter id="g" x="261" y="51" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+    <filter id="i" x="261" y="44.44" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+  </defs>
+</svg>
       </div>
       <div class="phone-label">
         <div class="phone-views">2M VIEWS</div>
@@ -535,9 +619,87 @@
     <div class="phone-item">
       <div class="phone-mockup">
         <div class="phone-screen">
-          <iframe src="https://player.vimeo.com/video/1172990442?autoplay=1&loop=1&muted=1&controls=0&background=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <iframe src="https://player.vimeo.com/video/1172990442?autoplay=1&loop=1&muted=1&autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <img src="https://cdn.prod.website-files.com/65ea3d8b80d297ef395b06d8/69b08f4fcca10b5653b82dd7_iPhone14-deep-purple.svg" alt="Phone" class="phone-shell">
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 892" >
+  <rect x="-.5" y=".5" width="15" height="35" rx="1.5" transform="matrix(-1 0 0 1 15 172)" fill="url(#a)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 320)" fill="url(#b)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 236)" fill="url(#c)" stroke="#A6A6AB"/>
+  <rect x=".5" y="-.5" width="15" height="107" rx="1.5" transform="matrix(1 0 0 -1 423 389)" fill="url(#d)" stroke="#A6A6AB"/>
+  <rect x="10.5" y="7.5" width="418" height="877" rx="68.5" stroke="#323039" stroke-width="15"/>
+  <rect x="6" y="3" width="427" height="886" rx="73" stroke="#5D5B66" stroke-width="6"/>
+  <rect x="5" y="2" width="429" height="888" rx="74" stroke="#CCBCC2" stroke-width="4"/>
+  <rect x="3.5" y=".5" width="432" height="891" rx="75.5" stroke="#ADABAC"/>
+  <rect x="16.5" y="13.5" width="406" height="865" rx="64.5" stroke="#0D0D0E" stroke-width="3"/>
+  <rect x="17" y="14" width="405" height="864" rx="64" fill="url(#e)"/>
+  <rect x="157" y="32" width="125" height="36" rx="18" fill="#000"/>
+  <g opacity=".5" transform="rotate(90 264 50)">
+    <circle cx="264" cy="50" r="6" stroke="#A0A9BB" stroke-opacity=".25"/>
+    <circle cx="264" cy="50" r="6" stroke="url(#f)"/>
+  </g>
+  <g filter="url(#g)">
+    <ellipse cx="264" cy="52.56" rx="1.56" ry="3" transform="rotate(90 264 52.56)" fill="url(#h)"/>
+  </g>
+  <g filter="url(#i)">
+    <ellipse rx="1.56" ry="3" transform="matrix(0 -1 -1 0 264 47.56)" fill="url(#j)"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="e" x1="219.5" y1="14" x2="219.5" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B2535"/><stop offset="1" stop-color="#1A1523"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 263.21 52.56)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 .77 3)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <filter id="g" x="261" y="51" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+    <filter id="i" x="261" y="44.44" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+  </defs>
+</svg>
       </div>
       <div class="phone-label">
         <div class="phone-views">1.3M VIEWS</div>
@@ -547,9 +709,87 @@
     <div class="phone-item">
       <div class="phone-mockup">
         <div class="phone-screen">
-          <iframe src="https://player.vimeo.com/video/1172990471?autoplay=1&loop=1&muted=1&controls=0&background=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <iframe src="https://player.vimeo.com/video/1172990471?autoplay=1&loop=1&muted=1&autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <img src="https://cdn.prod.website-files.com/65ea3d8b80d297ef395b06d8/69b08f4fcca10b5653b82dd7_iPhone14-deep-purple.svg" alt="Phone" class="phone-shell">
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 892" >
+  <rect x="-.5" y=".5" width="15" height="35" rx="1.5" transform="matrix(-1 0 0 1 15 172)" fill="url(#a)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 320)" fill="url(#b)" stroke="#A6A6AB"/>
+  <rect x="-.5" y=".5" width="15" height="67" rx="1.5" transform="matrix(-1 0 0 1 15 236)" fill="url(#c)" stroke="#A6A6AB"/>
+  <rect x=".5" y="-.5" width="15" height="107" rx="1.5" transform="matrix(1 0 0 -1 423 389)" fill="url(#d)" stroke="#A6A6AB"/>
+  <rect x="10.5" y="7.5" width="418" height="877" rx="68.5" stroke="#323039" stroke-width="15"/>
+  <rect x="6" y="3" width="427" height="886" rx="73" stroke="#5D5B66" stroke-width="6"/>
+  <rect x="5" y="2" width="429" height="888" rx="74" stroke="#CCBCC2" stroke-width="4"/>
+  <rect x="3.5" y=".5" width="432" height="891" rx="75.5" stroke="#ADABAC"/>
+  <rect x="16.5" y="13.5" width="406" height="865" rx="64.5" stroke="#0D0D0E" stroke-width="3"/>
+  <rect x="17" y="14" width="405" height="864" rx="64" fill="url(#e)"/>
+  <rect x="157" y="32" width="125" height="36" rx="18" fill="#000"/>
+  <g opacity=".5" transform="rotate(90 264 50)">
+    <circle cx="264" cy="50" r="6" stroke="#A0A9BB" stroke-opacity=".25"/>
+    <circle cx="264" cy="50" r="6" stroke="url(#f)"/>
+  </g>
+  <g filter="url(#g)">
+    <ellipse cx="264" cy="52.56" rx="1.56" ry="3" transform="rotate(90 264 52.56)" fill="url(#h)"/>
+  </g>
+  <g filter="url(#i)">
+    <ellipse rx="1.56" ry="3" transform="matrix(0 -1 -1 0 264 47.56)" fill="url(#j)"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A99DA9"/><stop offset=".06" stop-color="#C2BDC6"/><stop offset=".09" stop-color="#39333A"/>
+      <stop offset=".14" stop-color="#736E79"/><stop offset=".33" stop-color="#96919D"/><stop offset=".49" stop-color="#ABA5B5"/>
+      <stop offset=".65" stop-color="#9A97A2"/><stop offset=".88" stop-color="#736E79"/><stop offset=".9" stop-color="#39333A"/>
+      <stop offset=".96" stop-color="#C2BDC6"/><stop offset="1" stop-color="#A99DA9"/>
+    </linearGradient>
+    <linearGradient id="e" x1="219.5" y1="14" x2="219.5" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B2535"/><stop offset="1" stop-color="#1A1523"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 263.21 52.56)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <radialGradient id="j" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 3.84704 -1.58165 0 .77 3)">
+      <stop stop-color="#1F85DE"/><stop offset=".26" stop-color="#1B75C9"/><stop offset="1" stop-color="#000232"/>
+    </radialGradient>
+    <filter id="g" x="261" y="51" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+    <filter id="i" x="261" y="44.44" width="6" height="3.11" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/><feGaussianBlur stdDeviation=".5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+      <feBlend in2="shape" result="effect1_innerShadow_358_463"/>
+    </filter>
+  </defs>
+</svg>
       </div>
       <div class="phone-label">
         <div class="phone-views">3M VIEWS</div>
