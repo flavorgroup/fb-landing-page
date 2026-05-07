@@ -849,7 +849,7 @@
         <textarea name="entry.1634214872" placeholder="Tell us briefly what you're looking to solve..."></textarea>
       </div>
       <button type="submit" class="form-submit">Get My Free Audit &rarr;</button>
-      <div class="form-note" id="formNote">No commitment required. We'll respond within 24 hours.</div>
+      <div class="form-note" id="formNote">No commitment required. We'll respond within 48 hours.</div>
     </form>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(window.formSubmitted){showThankYou();}"></iframe>
     <script>
@@ -860,7 +860,7 @@
       }
       function showThankYou() {
         var form = document.getElementById('auditForm');
-        form.innerHTML = '<div style="text-align:center; padding:3rem 1rem;"><h3 style="font-family:var(--font-display); font-size:2rem; text-transform:uppercase; color:var(--white); margin-bottom:1rem;">Thanks!</h3><p style="color:var(--gray); font-size:1rem;">We received your request and will respond within 24 hours.</p></div>';
+        form.innerHTML = '<div style="text-align:center; padding:3rem 1rem;"><h3 style="font-family:var(--font-display); font-size:2rem; text-transform:uppercase; color:var(--white); margin-bottom:1rem;">Thanks!</h3><p style="color:var(--gray); font-size:1rem;">We received your request and will respond within 48 hours.</p></div>';
         window.formSubmitted = false;
       }
     </script>
